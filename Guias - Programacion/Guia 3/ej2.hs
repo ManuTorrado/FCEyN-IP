@@ -35,5 +35,20 @@ ambosSon0ConPM:: Integer -> Integer -> Bool
 ambosSon0ConPM x y | x == 0 && y == 0 = True
                    | otherwise = False
 
-mismoIntervalo:: Float -> Float -> Bool
-mismoIntervalo x y = not (x > 3 && y > 3  && x <= 3 && y <= 3)
+--mismoIntervalo:: Float -> Float -> Bool
+--mismoIntervalo x y = not (x > 3 && y > 3  && x <= 3 && y <= 3)
+
+sumaDistintos:: Integer -> Integer -> Integer -> Integer
+sumaDistintos x y z | x == y = x+z
+		    | y == z = z+x
+		    | x == z = x+y
+		    | otherwise = x + y + z 
+
+esMultiploDe:: Integer -> Integer -> Bool
+esMultiploDe x y =  ( x `mod` y == 0 )
+
+digitoUnidades:: Integer -> Integer 
+digitoUnidades x = x `mod`10
+
+digitoDecenas:: Integer -> Integer
+digitoDecenas x = (x `div` 10) `mod` 10
