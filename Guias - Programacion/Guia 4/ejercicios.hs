@@ -35,4 +35,25 @@ medioFact x | x == 0 = 1
 -- Ejercicio 6
 sumaDigitos :: Integer -> Integer
 sumaDigitos x | x < 10 = x
-	            |otherwise = x `mod` 10 + sumaDigitos(x `div` 10) 
+	            |otherwise = x `mod` 10 + sumaDigitos(x `div` 10)
+-- Ejercicio 7  
+
+ultimoDigito :: Integer -> Integer
+ultimoDigito x = x `mod` 10
+
+primerDigito :: Integer -> Integer
+primerDigito x | x < 10 = x 
+               | otherwise = primerDigito(x `div` 10)
+
+todosDigitosIguales :: Integer -> Bool
+todosDigitosIguales x | x < 10 = True
+								      | not ((primerDigito x) == (ultimoDigito x)) = False
+						          | otherwise = todosDigitosIguales(x `div` 10)
+-- Ejercicio 8
+
+--iesimoDigito :: Integer -> Integer -> Integer
+--iesimoDigito x y 
+
+
+
+
