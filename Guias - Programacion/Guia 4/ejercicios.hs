@@ -49,11 +49,19 @@ todosDigitosIguales :: Integer -> Bool
 todosDigitosIguales x | x < 10 = True
 								      | not ((primerDigito x) == (ultimoDigito x)) = False
 						          | otherwise = todosDigitosIguales(x `div` 10)
--- Ejercicio 8
 
---iesimoDigito :: Integer -> Integer -> Integer
---iesimoDigito x y 
 
+--Ejercicio 8
+cantidadDigitos :: Integer -> Integer
+cantidadDigitos x | x < 10 = 1
+                  | otherwise = 1 + cantidadDigitos(x `div` 10)
+	                
+sacaUltimoN :: Integer -> Integer
+sacaUltimoN x = x `div` 10
+
+iesimoDigito :: Integer -> Integer -> Integer
+iesimoDigito x y | cantidadDigitos x == y = ultimoDigito x
+	               | otherwise = iesimoDigito ( sacaUltimoN x ) y 
 
 
 
