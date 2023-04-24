@@ -21,13 +21,29 @@ reverso (x:xs) = reverso xs ++ [x]
 
 -- Ejercicio 2), 1
 pertenece ::  (Eq t) => t -> [t] -> Bool
+pertenece x [] = False
 pertenece x [y]    | (x == y) = True
 pertenece x [y]    | not (x == y) = False
 pertenece x (y:ys) | y == x = True 
 pertenece x (y:ys) | otherwise = pertenece x ys
 
 -- Ejercicio 2), 2
-todosIguales :: (Eq t) => [t] -> Bool
+--todosIguales :: (Eq t) => [t] -> Bool
+--todosIguales (x:xs) | not ( x == xs:)
+
+-- Ejercicio 3), 3
+
+--esIgualAlResto :: (Eq t) => t -> [t] -> Bool
+--esIgualAlResto x (y:ys) | not (x==y) = False
+--esIgualAlResto x [y]    | x == y = True
+--esIgualAlResto x (y:ys) | otherwise = esIgualAlResto x ys
+
+todosDistintos :: (Eq t) => [t] -> Bool
+todosDistintos [] = True
+todosDistintos (x:xs)   | (pertenece x xs) = False
+                        | otherwise = todosDistintos xs
+
+
 
 
 
