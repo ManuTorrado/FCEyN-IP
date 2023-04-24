@@ -28,15 +28,19 @@ pertenece x (y:ys) | y == x = True
 pertenece x (y:ys) | otherwise = pertenece x ys
 
 -- Ejercicio 2), 2
---todosIguales :: (Eq t) => [t] -> Bool
---todosIguales (x:xs) | not ( x == xs:)
+todosIguales :: (Eq t) => [t] -> Bool
+todosIguales [] = False
+todosIguales [x] =  True 
+todosIguales (x:xs) | not (x == (head xs)) = False
+todosIguales (x:xs) | otherwise = todosIguales xs
 
 -- Ejercicio 3), 3
 
---esIgualAlResto :: (Eq t) => t -> [t] -> Bool
---esIgualAlResto x (y:ys) | not (x==y) = False
---esIgualAlResto x [y]    | x == y = True
---esIgualAlResto x (y:ys) | otherwise = esIgualAlResto x ys
+-- Esto iba a ser una funcion auxiliar
+esIgualAlResto :: (Eq t) => t -> [t] -> Bool
+esIgualAlResto x (y:ys) | not (x==y) = False
+esIgualAlResto x [y]    | x == y = True
+esIgualAlResto x (y:ys) | otherwise = esIgualAlResto x ys
 
 todosDistintos :: (Eq t) => [t] -> Bool
 todosDistintos [] = True
@@ -44,7 +48,11 @@ todosDistintos (x:xs)   | (pertenece x xs) = False
                         | otherwise = todosDistintos xs
 
 
-
+-- 3,3)
+maximo :: [Integer] -> Integer 
+maximo [x] = x
+maximo (x:xs) | maximo (xs) < x = x
+maximo (x:xs) | otherwise = maximo xs
 
 
 
