@@ -51,9 +51,42 @@ todosDistintos (x:xs)   | (pertenece x xs) = False
 -- 3,3)
 maximo :: [Integer] -> Integer 
 maximo [x] = x
-maximo (x:xs) | maximo (xs) < x = x
+maximo (x:xs) | maximo (xs) <= x = x
 maximo (x:xs) | otherwise = maximo xs
 
 
 
+-- 3, 9) Ordenar
+maximoDe :: Integer -> [Integer] -> Bool
+maximoDe x y = (maximo y) == x 
 
+--Borra el primer elemento que encuentra
+borrar :: Integer -> [Integer] -> [Integer]
+borrar x y      | not (pertenece x y) = y 
+borrar x (y:ys) | x == y = ys
+               	| otherwise =  [y] ++ borrar x ys
+
+ 
+ordenar :: [Integer] -> [Integer]
+ordenar xs | xs == [] = []
+	         | otherwise = ordenar (borrar (maximo xs) xs) ++ [maximo xs]
+
+
+
+-- 4. 4 
+
+primeraPalabra :: [Char] -> [Char]
+primeraPalabra [] = []
+primeraPalabra (x:xs) | not (x == ' ') = x : primeraPalabra xs
+                      | otherwise = []
+
+--palabras :: [Char] -> [[Char]]
+--palabras [] = []
+--palabras (x:xs) | not (x == ' ') = x + palabras xs 
+--              | otherwise = x : 
+                 
+
+-- 4, 5)
+aplanar :: [[Char]] -> [Char]
+aplanar [] = []
+aplanar (x:xs) = x ++ aplanar xs
