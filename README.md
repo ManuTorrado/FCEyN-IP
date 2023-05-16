@@ -1,6 +1,8 @@
 # Intro-Programacion
 
-## Resumen de la materia Introduccion a la programacion. UBA - FCEN. In progress ⚙️
+## Resumen de la materia Introduccion a la programacion. UBA - FCEN. 
+
+### ⚙️ In progress
 
 <div  align="center" style="display: inline;">
 
