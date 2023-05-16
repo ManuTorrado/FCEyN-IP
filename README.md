@@ -2,7 +2,7 @@
 
 ## Resumen de la materia Introduccion a la programacion. UBA - FCEN. In progress ⚙️
 
-<div  align="center" style="display: block;">
+<div  align="center" style="display: inline;">
 
 | Teoricas                                      | Archivos                                                                                                                                                         |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
