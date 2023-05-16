@@ -1,5 +1,10 @@
 # Intro-Programacion
 
+| Teoricas                                      | Archivos                                                                                                                                                         |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Especificacion                                | [Teorica 2](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%202%20-%20Especificaciones.pdf)                                         |
+| Introduccion a la especificacion de problemas | [Teorica 3](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%203%20-%20Introduccion%20a%20la%20especificacion%20de%20problemas.pdf)  |
+| Paradigmas y buenas practicas                 | [Teorica 4] (https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%203%20-%20Introduccion%20a%20la%20especificacion%20de%20problemas.pdf) |
 
 | Guias  | Resoluciones                                                                                                         |
 |--------|----------------------------------------------------------------------------------------------------------------------|
