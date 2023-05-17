@@ -8,10 +8,14 @@
 
 | Teoricas |
 | ------ |
-| [Teorica 1](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%202%20-%20Especificaciones.pdf) |
-| [Teorica 2](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%203%20-%20Introduccion%20a%20la%20especificacion%20de%20problemas.pdf) |
-| [Teorica 3](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%204%20-%20Paradigmas%20y%20buenas%20practicas.pdf) |
-| [Teorica 4](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%205%20-%20Funcional%20B%C3%A1sico.pdf) |
+| [Teorica 1](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%20-%20L%C3%B3gica.pdf) |
+| [Teorica 2](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%202%20-%20Especificaciones.pdf) |
+| [Teorica 3](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%203%20-%20Introduccion%20a%20la%20especificacion%20de%20problemas.pdf) |
+| [Teorica 4](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Teorica%204%20-%20Paradigmas%20y%20buenas%20practicas.pdf) |
+| [Teorica 5](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%205%20-%20Funcional%20B%C3%A1sico.pdf) |
+| [Teorica 6](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%206%20-%20Mecanismo%20de%20recursi%C3%B3n.pdf) |
+| [Teorica 7](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%207%20-%20Recursi%C3%B3n%20sobre%20listas.pdf) |
+| [Teorica 8](https://github.com/ManuTorrado/Intro-Programacion/blob/main/Teoricas/Te%C3%B3rica%208%20-%20Introducci%C3%B3n%20a%20calidad%20en%20software%20-%20handouts.pdf)|
 
   
 | Guias  | Resoluciones                                                                                                         |
