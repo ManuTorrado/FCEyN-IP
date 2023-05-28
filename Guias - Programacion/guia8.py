@@ -51,3 +51,17 @@ def ordenados(s: list) -> bool:
             res = False
             break
     return res
+
+# 5
+
+
+def palabrasMayorA7(s: str) -> bool:
+    res: bool = (len(s) > 7)
+    return res
+
+# 6
+
+
+def esPalindromo(s: str) -> bool:
+    res: bool = (s[::-1] == s)  # el operador [::-1] me da la lista invertida
+    return res
