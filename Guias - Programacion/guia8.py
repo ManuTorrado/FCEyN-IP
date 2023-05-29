@@ -13,6 +13,15 @@ def pertenece2(c: list, z: int) -> bool:
             break
     return res
 
+
+def perteneceGenerico(c: list, z: any) -> bool:
+    res: bool = False
+    for j in c:
+        if (j == z):
+            res = True
+            break
+    return res
+
 # 2
 
 
@@ -64,4 +73,44 @@ def palabrasMayorA7(s: str) -> bool:
 
 def esPalindromo(s: str) -> bool:
     res: bool = (s[::-1] == s)  # el operador [::-1] me da la lista invertida
+    return res
+
+# 7
+
+# Funciones auxiliares
+
+
+def palabrasMayorA(z: int, s: str) -> bool:
+    res: bool = (len(s) > z)
+    return res
+
+
+def contieneUnaMayuscula(s: str) -> bool:
+    res: bool = False
+    for letter in s:
+        if (letter.upper == letter):
+            res = True
+            break
+    return res
+
+
+def contieneUnaMinuscula(s: str) -> bool:
+    res: bool = False
+    for letter in s:
+        if (letter.upper != letter):
+            res = False
+            break
+    return res
+
+# Funcion del ejercicio
+
+
+def seguridadContrasena(password: str) -> str:
+    res: str
+    if (palabrasMayorA(8, password) and contieneUnaMayuscula(password) and contieneUnaMinuscula(password)):
+        res = 'VERDE'
+    if (not (palabrasMayorA(6, password))):
+        res = 'ROJA'
+    else:
+        res = 'AMARILLA'
     return res
