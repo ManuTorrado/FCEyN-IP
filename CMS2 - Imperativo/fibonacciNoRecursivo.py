@@ -2,12 +2,18 @@ import sys
 
 
 def fibonacciNoRecursivo(n: int) -> int:
-    # Implementar esta funcion
-    return 0
+    res: int = 0
 
-
-def esSecuenciaFibonacci(l: list) -> bool:
-    res: bool = ((len(l) > 0 and l[0] == 0) and (len(l) > 1 and l[1] == 1))
+    if (n == 0):
+        return 1
+    if (n == 1):
+        return 1
+    seq: list = [1, 1]
+    count: int = 2
+    while (count < n):
+        seq.append(seq[count-1] + seq[count-2])
+        count += 1
+    res = seq[len(seq)-1]
 
     return res
 
