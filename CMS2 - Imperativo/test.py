@@ -150,8 +150,89 @@ def todosIguales(l: list[int], i: int, j: int) -> bool:
 
     return res
 
+# Casos de test ej 3
 
+
+"""
 print(mesetaMasLarga([1, 1, 2, 3]))  # Esperado: 2
 print(mesetaMasLarga([2, 3, 1, 1]))  # Esperado: 2
 print(mesetaMasLarga([1, 1, 2, 2, 2, 3, 3]))  # Esperado: 3
 print(mesetaMasLarga([1, -2, -2, -2, 3, 3, 4, 4, 5])),  # Esperado : 3
+"""
+
+# Ejercicio 4
+
+
+def esMatriz(m: List[List[int]]) -> bool:
+    if ((not (len(m) > 0)) or (not (len(m[0]) > 0))):
+        return False
+
+    res: bool = True
+    for j in range(0, len(m)):
+        if (not (len(m[j]) == len(m[0]))):
+            res = False
+            break
+    return res
+
+
+"""
+def filasParecidasAanterior(m: List[int], n: int) -> bool:
+    res: bool = True
+    for i in range(1, len(m)):
+        if (not filaAnteriorMasN(m, i, n)):
+            res = False
+            break
+    return res
+"""
+
+
+def filaAnteriorMasN(m: List[int], i: int) -> bool:
+    res: bool = True
+
+    """
+    for j in range(0, len(m[0])):
+        if (not m[i][j] == m[i-1][j] + n):
+            res = False
+            break
+            """
+
+    return res
+
+
+def filasParecidas(m: list[list[int]]) -> bool:
+    print(m)
+    res: bool = existeSolucion(m)
+    return res
+
+
+def existeSolucion(l: list[list[int]]) -> bool:
+    res: bool = True
+    i: int = 1
+    n: int = l[1][0] - l[0][0]
+    print("n = ", n)
+    while (i < len(l)):
+
+        for j in range(0, len(l[0])):
+            print(l[i][j], " - ", l[i-1][j], ' =', l[i][j] - l[i-1][j])
+
+            if (not (l[i][j] - l[i-1][j] == n)):
+                res = False
+                break
+
+        i += 1
+    return res
+
+# Casos de test ej 4
+
+
+print(filasParecidas([[3], [3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]))  # True
+print(filasParecidas([[3], [3], [-1, -2, -3],
+      [-1, -2, -3], [-1, -2, -3]]))  # True
+print(filasParecidas([[2], [3], [1, 2, 3], [-9, -10, -7]]))  # false
+print(filasParecidas([[5], [2], [100, 200], [
+      5, 6], [1, 2], [1, 2], [1, 2]]))  # false
+
+# print(filasParecidas([[3], [3], [1, 2, 3], [-1, 0, 1], [-3, -2, -1]]))  # True
+
+print(filasParecidas([[3], [3], [-1, -2, -3],
+      [-2, -3, -4], [-3, -4, -5,]]))  # True
