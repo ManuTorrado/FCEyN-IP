@@ -5,10 +5,10 @@ def fibonacciNoRecursivo(n: int) -> int:
     res: int = 0
 
     if (n == 0):
-        return 1
+        return 0
     if (n == 1):
         return 1
-    seq: list = [1, 1]
+    seq: list[int] = [1, 1]
     count: int = 2
     while (count < n):
         seq.append(seq[count-1] + seq[count-2])
