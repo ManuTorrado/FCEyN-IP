@@ -1,4 +1,8 @@
+from typing import List
+from typing import Tuple
 # Ejercicio 1
+
+
 def quienGana(j1: str, j2: str) -> str:
     res: str = ''
     if (gana(j1, j2)):
@@ -225,14 +229,104 @@ def existeSolucion(l: list[list[int]]) -> bool:
 # Casos de test ej 4
 
 
-print(filasParecidas([[3], [3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]))  # True
-print(filasParecidas([[3], [3], [-1, -2, -3],
-      [-1, -2, -3], [-1, -2, -3]]))  # True
-print(filasParecidas([[2], [3], [1, 2, 3], [-9, -10, -7]]))  # false
-print(filasParecidas([[5], [2], [100, 200], [
-      5, 6], [1, 2], [1, 2], [1, 2]]))  # false
+def testear4():
+    print(filasParecidas([[3], [3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]))  # True
+    print(filasParecidas([[3], [3], [-1, -2, -3],
+                          [-1, -2, -3], [-1, -2, -3]]))  # True
+    print(filasParecidas([[2], [3], [1, 2, 3], [-9, -10, -7]]))  # false
+    print(filasParecidas([[5], [2], [100, 200], [
+        5, 6], [1, 2], [1, 2], [1, 2]]))  # false
 
-# print(filasParecidas([[3], [3], [1, 2, 3], [-1, 0, 1], [-3, -2, -1]]))  # True
+    # print(filasParecidas([[3], [3], [1, 2, 3], [-1, 0, 1], [-3, -2, -1]]))  # True
 
-print(filasParecidas([[3], [3], [-1, -2, -3],
-      [-2, -3, -4], [-3, -4, -5,]]))  # True
+    print(filasParecidas([[3], [3], [-1, -2, -3],
+                          [-2, -3, -4], [-3, -4, -5,]]))  # True
+
+
+# Ejercicio 5
+
+
+def hayVuelosDesde(origen: str, vuelos: List[Tuple[str, str]]) -> bool:
+    res: bool = False
+
+    for vuelo in vuelos:
+        if (vuelo[0] == origen):
+            res = True
+            break
+
+    return res
+
+
+def hayVuelosHasta(destino: str, vuelos: List[Tuple[str, str]]) -> bool:
+    res: bool = False
+
+    for vuelo in vuelos:
+        if (vuelo[1] == destino):
+            res = True
+            break
+
+    return res
+
+
+def hayRuta(origen: str, destino: str, vuelos: List[Tuple[str, str]]) -> bool:
+    res: bool = True
+    if (not hayVuelosHasta(destino, vuelos) or not hayVuelosDesde(origen, vuelos)):
+        res = False
+
+    return res
+
+
+def vuelosDesde(origen: str,  vuelos: List[Tuple[str, str]]) -> List[Tuple[str, str]]:
+    res: List[Tuple[str, str]] = []
+    for vuelo in vuelos:
+        if (vuelo[0] == origen):
+            res.append(vuelo)
+
+    return res
+
+
+def buscarRuta(origen: str, destino: str, vuelos: List[Tuple[str, str]]) -> List[Tuple[str, str]]:
+    res: List[Tuple[str, str]] = []
+    # esto asumiendo que los vuelos hacia el destino y desde el origen existen
+    for vuelo in vuelosDesde(origen, vuelos):
+        if vuelo[1] == destino:
+            res.append(vuelo)
+            break
+        else:
+            res.append(vuelo)
+            res.extend(buscarRuta(vuelo[1], destino,
+                                  vuelos))
+
+    return res
+
+
+def sePuedeLlegar(origen: str, destino: str, vuelos: List[Tuple[str, str]]) -> int:
+   # Implementar esta funcion
+    if (not hayRuta(origen, destino, vuelos)):
+        return -1
+    res: int = len(buscarRuta(origen, destino, vuelos))
+
+    return res
+
+# Casos de test ejercicio 5
+
+
+print(sePuedeLlegar('A', 'B', [('A', 'C'), ('C', 'B')]))  # 2
+# print("------------------")
+print(sePuedeLlegar('A', 'B', [('A', 'C'), ('C', 'D'), ('C', 'B')]))  # 3
+# print("------------------")
+print(sePuedeLlegar('A', 'B', [('A', 'C'), ('C', 'A')]))  # -1
+
+
+print(sePuedeLlegar('rosario', 'buenos-aires', [('rosario', 'jujuy'),
+      ('san-telmo', 'jujuy'), ('chubut', 'buenos-aires'), ('jujuy', 'chubut')]))  # 3
+
+# def hayRuta(vuelos: list[Tuple[str, str]], origen: str, destino: str) -> bool:
+# res: bool = len(buscarRuta(origen, destino, vuelos)) > 0
+
+# vuelosValidos(ruta, vuelos)
+# len(ruta) >= 1
+# ruta[0] == origen
+# ruta[len(ruta) - 1] == destino
+# caminoDeVuelos(ruta)
+#    return res
