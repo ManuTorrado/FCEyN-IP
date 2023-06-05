@@ -1,3 +1,6 @@
 hola como estas
-hola
-hola hola
+# hola
+#hola
+esto no es #un comentario
+esto # tampoco
+                     #hola 
