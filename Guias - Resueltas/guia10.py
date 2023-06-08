@@ -63,20 +63,21 @@ def cantidadApariciones(nombre_archivo: str, palabra: str) -> int:
 def clonarSinComentarios(nombre_archivo: str):
     f = open(nombre_archivo, "r")
     lines = f.readlines()
-    bufferLines: list[str] = []
-    for l in lines:
-        bufferLine: str = l
-        # print(l.split()[0][0])
-        if (l.split()[0][0] == "#"):
-            resString = bufferLine.split()[0][1:]
-            print(resString)
-            bufferLines.append(resString)
-        else:
-            bufferLines.append(bufferLine)
     f2 = open(nombre_archivo+" copia", "w")
-    for line in bufferLines:
+
+    for line in lines:
+        print(line.strip())
+        if (line.strip()[0] == "#"):
+
+            f2.write(line.strip()[1:] + '\n')
+            continue
         f2.write(line)
+
     f2.close()
 
 
 clonarSinComentarios("hola.txt")
+
+
+def reverso(nombre_archivo: str):
+    f = open(nombre_archivo, 'r')
