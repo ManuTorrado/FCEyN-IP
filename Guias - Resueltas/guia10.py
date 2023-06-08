@@ -76,8 +76,31 @@ def clonarSinComentarios(nombre_archivo: str):
     f2.close()
 
 
-clonarSinComentarios("hola.txt")
+# clonarSinComentarios("hola.txt")
+
+# Ejercicio 3
 
 
 def reverso(nombre_archivo: str):
     f = open(nombre_archivo, 'r')
+    f2 = open(nombre_archivo + ' reverso', 'w')
+    lines: list[str] = f.readlines()
+    count = len(lines)
+    while (count > 0):
+        f2.write(lines[count-1])
+        count -= 1
+
+    f2.close()
+
+
+# reverso('hola.txt')
+
+# Ejercicio 4
+
+
+def agregarFrase(nombre_archivo: str, frase: str):
+    f = open(nombre_archivo, 'a')
+    f.write('\n' + frase)
+    f.close()
+
+# agregarFrase('hola.txt', 'ultima')
