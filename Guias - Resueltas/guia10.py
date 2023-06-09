@@ -105,10 +105,16 @@ def agregarFraseAlFinal(nombre_archivo: str, frase: str):
 
 # agregarFrase('hola.txt', 'ultima')
 
-# Ejercicio 5
+# Ejercicio 5 (se puede mejorar?)
 
 
 def agregarFraseAlPrincipio(nombre_archivo: str, frase: str):
+    file_read = open(nombre_archivo, 'r')
+    lines = file_read.read()
+    file_read.close()
     f = open(nombre_archivo, 'w')
-    lines = f.readlines()
-    f.write(lines + '\n' + frase)
+    f.write(frase + '\n' + lines)
+    f.close()
+
+
+# agregarFraseAlPrincipio('hola.txt', 'principio')
