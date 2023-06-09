@@ -98,9 +98,17 @@ def reverso(nombre_archivo: str):
 # Ejercicio 4
 
 
-def agregarFrase(nombre_archivo: str, frase: str):
+def agregarFraseAlFinal(nombre_archivo: str, frase: str):
     f = open(nombre_archivo, 'a')
     f.write('\n' + frase)
     f.close()
 
 # agregarFrase('hola.txt', 'ultima')
+
+# Ejercicio 5
+
+
+def agregarFraseAlPrincipio(nombre_archivo: str, frase: str):
+    f = open(nombre_archivo, 'w')
+    lines = f.readlines()
+    f.write(lines + '\n' + frase)
