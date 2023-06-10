@@ -1,3 +1,6 @@
+import random
+
+
 # Ejercicio 1
 
 
@@ -118,3 +121,41 @@ def agregarFraseAlPrincipio(nombre_archivo: str, frase: str):
 
 
 # agregarFraseAlPrincipio('hola.txt', 'principio')
+
+# Ejercicio 6 - revisar
+
+def leerBinario(nombre_archivo: str):
+    f = open(nombre_archivo, 'r')
+
+
+# Ejercicio 7 - revisar
+
+def promedioEstudiante(lu: str) -> float:
+    res: float = 0
+    csv: str = open("alumnos.csv", 'r')
+
+    return res
+
+
+def separadoPorComas(nombre_archivo: str):
+    f = open(nombre_archivo, 'r')
+
+
+# Pilas
+
+# Ejercicio 8
+def generarNrosAlAzar(n: int, desde: int, hasta: int) -> list[int]:
+    res: list[int] = []
+    aux: int = 0
+    while (aux < n):
+        res.append(random.sample())
+        aux += 1
+    return res
+
+# Ejercicio 9
+
+
+def armarPila():
+    res: list[int] = []
+
+    return res
