@@ -1,3 +1,5 @@
+from queue import LifoQueue as Pila
+from queue import Queue as Cola
 import random
 
 
@@ -15,7 +17,7 @@ def contarlineas(nombre_archivo: str) -> int:
 # otra forma
 
 
-def contarlienas2(nombre_archivo: str) -> int:
+def contarlineas2(nombre_archivo: str) -> int:
     f = open(nombre_archivo, "r")
     res: int = len(f.readlines())
     return res
@@ -145,17 +147,90 @@ def separadoPorComas(nombre_archivo: str):
 
 # Ejercicio 8
 def generarNrosAlAzar(n: int, desde: int, hasta: int) -> list[int]:
-    res: list[int] = []
-    aux: int = 0
-    while (aux < n):
-        res.append(random.sample())
-        aux += 1
+    res: list[int] = random.sample(range(desde, hasta), n)
     return res
+
+
+# print(generarNrosAlAzar(5, 1, 10))
 
 # Ejercicio 9
 
 
-def armarPila():
-    res: list[int] = []
+def armarPila(n: int, desde: int, hasta: int):
+    res: Pila = Pila()
+    for numero in generarNrosAlAzar(n, desde, hasta):
+        res.put(numero)
+    return res
+
+
+# print(armarPila(5, 1, 10))
+
+# Ejercicio 10
+
+
+def cantidadElementos(p: Pila) -> int:
+    res: int = p.qsize()
 
     return res
+
+
+"""
+p = Pila()
+p.put(7)
+p.put(3)
+print(cantidadElementos(p))
+"""
+
+# Ejercicio 11
+
+
+def buscarElMaximo(p: Pila) -> int:
+    res: int = 0
+    ind: int = 0
+    while (ind < p.qsize()):
+        if (p.get(ind) > res):
+            res = p.get(ind)
+    return res
+
+
+""" 
+p = Pila()
+p.put(4)
+p.put(7)
+p.put(3)
+print(buscarElMaximo(p))
+"""
+
+# Ejercicio 12
+# Lo dejo para despues
+
+
+def estaBienBalanceada(s: str) -> bool:
+    res: bool = False
+
+    return res
+
+
+# 3. Colas
+
+# Ejercicio 13
+
+def generarNrosAlAzar(n: int, desde: int, hasta: int):
+    lista: list[any] = generarNrosAlAzar(n, desde, hasta)
+    c = Cola()
+    for x in lista:
+        c.put(x)
+    return c
+
+# Ejercicio 14
+
+
+def cantidadElementos(c: Cola) -> int:
+    res = c.qsize()
+    return res
+
+
+c = Cola()
+c.put(1)
+c.put(3)
+print(cantidadElementos(c))
