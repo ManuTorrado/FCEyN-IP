@@ -168,9 +168,16 @@ def armarPila(n: int, desde: int, hasta: int):
 # Ejercicio 10
 
 
-def cantidadElementos(p: Pila) -> int:
-    res: int = p.qsize()
+def cantidadElementosPila(p: Pila) -> int:
+    res: int = 0
+    while not p.empty():
+        res += 1
+        p.get()
+    return res
 
+
+def cantidadElementosPila2(p: Pila) -> int:
+    res: int = p.qsize()
     return res
 
 
@@ -178,8 +185,9 @@ def cantidadElementos(p: Pila) -> int:
 p = Pila()
 p.put(7)
 p.put(3)
-print(cantidadElementos(p))
+print(cantidadElementosPila(p))
 """
+
 
 # Ejercicio 11
 
@@ -225,12 +233,56 @@ def generarNrosAlAzar(n: int, desde: int, hasta: int):
 # Ejercicio 14
 
 
-def cantidadElementos(c: Cola) -> int:
+def cantidadElementosCola(c: Cola) -> int:
+    res: int = 0
+    while not c.empty():
+        c.get()
+        res += 1
+    return res
+
+# Forma alternativa
+
+
+def cantidadElementosCola2(c: Cola) -> int:
     res = c.qsize()
     return res
 
 
+"""
 c = Cola()
 c.put(1)
 c.put(3)
-print(cantidadElementos(c))
+print(cantidadElementosCola(c))
+"""
+
+
+# 4 Diccionarios
+
+# Ejercicio 18
+def agregarPorLongitud(nombre_archivo: str) -> dict:
+    res: dict = {}
+    f = open(nombre_archivo, 'r')
+    lines: list[str] = f.readlines()
+    for line in lines:
+        aux: int = 0
+        if ((len(line.split())) in res):
+            res[(len(line.split()))] += 1
+        else:
+            res[(len(line.split()))] = 1
+    print(res)
+    return res
+
+
+agregarPorLongitud('hola.txt')
+# Ejercicio 19
+
+
+def promedioAlumnos(nombre_archivo: str) -> int:
+    res: int = 0
+    return res
+
+# Ejercicio 20
+
+
+def laPalabraMasFrecuente(nombre_archivo: str) -> str:
+    f = open(nombre_archivo, 'r')

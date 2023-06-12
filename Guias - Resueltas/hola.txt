@@ -1,10 +1,7 @@
-principio
-principio
-principio
 a
 b
 c
 d
-principio
+principio a
 principio
 principio
