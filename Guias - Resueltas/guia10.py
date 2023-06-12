@@ -264,7 +264,6 @@ def agregarPorLongitud(nombre_archivo: str) -> dict:
     f = open(nombre_archivo, 'r')
     lines: list[str] = f.readlines()
     for line in lines:
-        aux: int = 0
         if ((len(line.split())) in res):
             res[(len(line.split()))] += 1
         else:
@@ -274,9 +273,7 @@ def agregarPorLongitud(nombre_archivo: str) -> dict:
 
 
 # agregarPorLongitud('hola.txt')
-# Ejercicio 19
-
-
+# Ejercicio 19, sin hacer
 def promedioAlumnos(nombre_archivo: str) -> int:
     res: int = 0
     return res
@@ -284,5 +281,31 @@ def promedioAlumnos(nombre_archivo: str) -> int:
 # Ejercicio 20
 
 
+def buscarElMayor(diccionario: dict) -> str:
+    res: str = ''
+    aux: int = 0
+    for clave in diccionario:
+        if (diccionario[clave] > aux):
+            aux = diccionario[clave]
+            res = clave
+    return res
+
+
 def laPalabraMasFrecuente(nombre_archivo: str) -> str:
+    res: str = ''
     f = open(nombre_archivo, 'r')
+    lines = f.readlines()
+    aux: dict = {}
+    for line in lines:
+        words: str = line.split()
+        for word in words:
+            if (word in aux):
+                aux[word] += 1
+            else:
+                aux[word] = 1
+    res = buscarElMayor(aux)
+
+    return res
+
+
+# laPalabraMasFrecuente('hola.txt')
