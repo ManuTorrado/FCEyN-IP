@@ -269,11 +269,11 @@ def agregarPorLongitud(nombre_archivo: str) -> dict:
             res[(len(line.split()))] += 1
         else:
             res[(len(line.split()))] = 1
-    print(res)
+
     return res
 
 
-agregarPorLongitud('hola.txt')
+# agregarPorLongitud('hola.txt')
 # Ejercicio 19
 
 
