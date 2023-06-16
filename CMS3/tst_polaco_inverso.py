@@ -32,8 +32,6 @@ def operacionBinaria(operando1: float, operando2: float, operador: str) -> float
 
     return res
 
-# Funcion que se encarga de manejar las recursiones de la pila
-
 
 def operar(pila: LifoQueue) -> float:
     res: float = 0.0
@@ -75,6 +73,8 @@ def calcular_expresion(expr: str) -> float:
     return res
 
 
-if __name__ == '__main__':
-    x = input()  # Por ejemplo: 2 5 * 7 +
-    print(round(calcular_expresion(x), 5))
+# Casos de test
+print(calcular_expresion('5 2 +'))  # 7
+print(calcular_expresion('5 2 - 4 *'))  # 17
+print(calcular_expresion('2 5 * 7 +'))  # 17.0
+print(calcular_expresion('2 3.5 -'))  # -1.5
