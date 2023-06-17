@@ -78,3 +78,4 @@ print(calcular_expresion('5 2 +'))  # 7
 print(calcular_expresion('5 2 - 4 *'))  # 17
 print(calcular_expresion('2 5 * 7 +'))  # 17.0
 print(calcular_expresion('2 3.5 -'))  # -1.5
+print(calcular_expresion('2 -3.5 +'))  # -1.5
